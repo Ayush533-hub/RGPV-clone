@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Saved Marksheet</title>
+</head>
+<body>
+  <h2>Enrollment: {{ enrollment }}</h2>
+  <div id="output">
+    {{ content|safe }}
+  </div>
+  <script>
+async function saveMarksheet() {
+  const enroll = document.getElementById("enroll").value.trim();
+  const content = document.getElementById("pdfContent").innerHTML;
+
+  if (!enroll) {
+    alert("Enrollment number missing!");
+    return;
+  }
+
+  const res = await fetch("/save", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ enrollment: enroll, data: content })
+  });
+
+  const result = await res.json();
+  alert(result.message);
+}
+</script>
+</body>
+</html>
