@@ -1,0 +1,65 @@
+# Docker Build Ignore File
+# Files/folders excluded from Docker build context
+
+# Git
+.git
+.gitignore
+.gitattributes
+
+# Environment (use env_file in docker-compose instead)
+.env
+.env.local
+.env.*.local
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+*.egg-info/
+dist/
+build/
+.pytest_cache/
+.tox/
+.coverage
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*.sublime-*
+
+# OS
+.DS_Store
+Thumbs.db
+.Trashes
+
+# Logs (keep recent ones, but exclude large old ones)
+logs/*.log.*
+logs/old/
+
+# Documentation
+README.md
+DEPLOYMENT_*.md
+WORKFLOW_*.md
+*.md
+
+# CI/CD
+.github/
+.gitlab-ci.yml
+.travis.yml
+
+# Data files (use volumes instead)
+data/backups/
+*.sqlite*
+
+# Large media files
+*.mp4
+*.avi
+*.mov
+*.zip

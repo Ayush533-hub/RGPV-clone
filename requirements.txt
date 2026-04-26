@@ -1,0 +1,32 @@
+# Flask Web Framework
+Flask==2.3.2
+Flask-CORS==4.0.0
+Werkzeug==2.3.6
+
+# Environment Variables Management
+python-dotenv==1.0.0
+
+# Production WSGI Servers (choose one)
+gunicorn==21.2.0
+# waitress==2.1.2
+
+# Database (optional, for production databases)
+# psycopg2-binary==2.9.6  # PostgreSQL
+# PyMySQL==1.1.0          # MySQL
+
+# Utilities
+python-dateutil==2.8.2
+pytz==2023.3
+
+# Optional but recommended for production
+# Error tracking
+# sentry-sdk==1.25.0
+
+# Rate limiting
+# Flask-Limiter==3.3.1
+
+# API documentation
+# Flask-APISpec==0.11.0
+
+# Security headers
+# Flask-Talisman==1.1.0

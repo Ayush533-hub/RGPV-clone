@@ -1,0 +1,76 @@
+# docker-compose.yml
+# Easy Docker deployment with environment configuration
+
+version: '3.8'
+
+services:
+  # Main Flask Application
+  web:
+    build: .
+    container_name: rgpv-app
+    
+    # Port mapping: host:container
+    ports:
+      - "8000:5000"
+    
+    # Environment variables
+    environment:
+      FLASK_ENV: production
+      FLASK_DEBUG: "False"
+      HOST: 0.0.0.0
+      PORT: 5000
+    
+    # Load .env file
+    env_file:
+      - .env
+    
+    # Volume mounts for persistence
+    volumes:
+      - ./data:/app/data
+      - ./logs:/app/logs
+    
+    # Restart policy
+    restart: unless-stopped
+    
+    # Health check
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:5000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 10s
+    
+    # Resource limits (optional)
+    deploy:
+      resources:
+        limits:
+          cpus: '1'
+          memory: 512M
+        reservations:
+          cpus: '0.5'
+          memory: 256M
+    
+    # Logging
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
+    
+    # Labels for container management
+    labels:
+      - "app=rgpv"
+      - "version=1.0"
+
+# Named volumes for persistence
+volumes:
+  data:
+    driver: local
+  logs:
+    driver: local
+
+# Networks
+networks:
+  default:
+    name: rgpv-network
+    driver: bridge

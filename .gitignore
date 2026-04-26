@@ -1,0 +1,119 @@
+# ==========================================
+# Environment Variables (SENSITIVE - NEVER COMMIT)
+# ==========================================
+.env
+.env.local
+.env.*.local
+.env.production
+
+# ==========================================
+# Python
+# ==========================================
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+pip-wheel-metadata/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# ==========================================
+# Database Files
+# ==========================================
+*.db
+*.sqlite
+*.sqlite3
+data/
+data.db
+*.backup
+
+# ==========================================
+# IDE & Editor
+# ==========================================
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+*.sublime-project
+*.sublime-workspace
+
+# ==========================================
+# Logs
+# ==========================================
+logs/
+*.log
+*.log.*
+
+# ==========================================
+# Temporary Files
+# ==========================================
+*.tmp
+*.temp
+temp/
+tmp/
+*.bak
+*.cache
+
+# ==========================================
+# OS Specific
+# ==========================================
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+desktop.ini
+
+# ==========================================
+# Testing
+# ==========================================
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+
+# ==========================================
+# Virtual Environments
+# ==========================================
+venv/
+env/
+ENV/
+.venv
+
+# ==========================================
+# Build Files
+# ==========================================
+*.dist-info/
+*.egg-info/
+build/
+dist/
+
+# ==========================================
+# Media Files (if too large)
+# ==========================================
+# *.mp4
+# *.avi
+# *.mov
