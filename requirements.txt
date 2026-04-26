@@ -6,17 +6,23 @@ Werkzeug==2.3.6
 # Environment Variables Management
 python-dotenv==1.0.0
 
-# Production WSGI Servers (choose one)
+# Production WSGI Servers
 gunicorn==21.2.0
-# waitress==2.1.2
+waitress==2.1.2
 
-# Database (optional, for production databases)
-# psycopg2-binary==2.9.6  # PostgreSQL
-# PyMySQL==1.1.0          # MySQL
+# Database - PostgreSQL with ORM
+Flask-SQLAlchemy==3.0.5
+SQLAlchemy==2.0.19
+psycopg2-binary==2.9.7
+
+# Database migration tool
+Flask-Migrate==4.0.4
+alembic==1.11.3
 
 # Utilities
 python-dateutil==2.8.2
 pytz==2023.3
+click==8.1.7
 
 # Optional but recommended for production
 # Error tracking
