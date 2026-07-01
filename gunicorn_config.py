@@ -16,7 +16,8 @@ load_dotenv()
 # ==========================================
 # IP address and port to bind to
 host = os.getenv("HOST", "0.0.0.0")
-port = int(os.getenv("PORT", 8000))
+# Prefer runtime-provided PORT (Render uses PORT), fall back to RENDER_PORT or 8000
+port = int(os.getenv("PORT", os.getenv("RENDER_PORT", 8000)))
 bind = f"{host}:{port}"
 
 # ==========================================

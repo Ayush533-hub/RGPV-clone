@@ -20,6 +20,18 @@ def serve_html(filename):
             return send_file(filename)
     return "<h2>File not found</h2>", 404
 
+
+@app.route('/health')
+def health():
+    """Simple health check for load balancers and platform probes"""
+    try:
+        conn = sqlite3.connect(DB_NAME)
+        conn.execute("SELECT 1")
+        conn.close()
+        return jsonify({"status": "healthy"}), 200
+    except Exception as e:
+        return jsonify({"status": "unhealthy", "error": str(e)}), 500
+
 # ---------- Database Setup ----------
 def init_db():
     conn = sqlite3.connect(DB_NAME)

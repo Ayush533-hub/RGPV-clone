@@ -3,7 +3,7 @@ services:
     name: rgpv-app
     runtime: python311
     buildCommand: pip install -r requirements.txt
-    startCommand: gunicorn -c gunicorn_config.py app:app
+    startCommand: gunicorn -c gunicorn_config.py app_production:app
     envVars:
       - key: PYTHON_VERSION
         value: 3.11
@@ -13,8 +13,6 @@ services:
         value: "False"
       - key: HOST
         value: 0.0.0.0
-      - key: PORT
-        value: 5000
       - key: SECRET_KEY
         generateValue: true
     autoDeploy: true
