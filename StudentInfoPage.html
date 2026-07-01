@@ -73,7 +73,8 @@ async function checkEnrollment() {
   }
 
   try {
-    const res = await fetch("http://127.0.0.1:5000/check?enrollment=" + encodeURIComponent(enroll));
+  // Use a relative URL so the frontend works locally and when deployed
+  const res = await fetch(`/check?enrollment=${encodeURIComponent(enroll)}`);
     const result = await res.json();
 
     if (result.exists) {
